@@ -65,7 +65,7 @@ Overweight: 25 ≤ BMI < 30
 Obese: BMI ≥ 30
 
 ## 🔄 CRUD Operations
-### CREATE - Add New Patient
+## CREATE - Add New Patient
 httpPOST /create
 Content-Type: application/json
 
@@ -82,7 +82,7 @@ Response:
 json{
   "message": "patient created successfully"
 }
-### READ - Get Patient Data
+## READ - Get Patient Data
 Get All Patients
 httpGET /view
 Get Specific Patient
@@ -107,7 +107,7 @@ Parameters:
 sort_by: height, weight, or bmi
 order: asc or desc (default: asc)
 
-### UPDATE - Modify Patient Data
+## UPDATE - Modify Patient Data
 httpPUT /edit/{patient_id}
 Content-Type: application/json
 
@@ -125,7 +125,7 @@ Response:
 json{
   "message": "patient updated"
 }
-### DELETE - Remove Patient
+## DELETE - Remove Patient
 httpDELETE /delete/{patient_id}
 Example:
 httpDELETE /delete/P001
@@ -186,11 +186,14 @@ json{
 CRUD Compliance:
 
 ✅ Create: POST /create - Add new patients with full validation
+
 ✅ Read: GET /view, GET /patient/{id}, GET /sort - Multiple read operations
+
 ✅ Update: PUT /edit/{id} - Partial and full updates with recalculation
+
 ✅ Delete: DELETE /delete/{id} - Safe patient removal
 
-Advanced Features:
+## Advanced Features:
 
 Computed Fields: Automatic BMI and health verdict calculation
 Data Validation: Pydantic models ensure data integrity
